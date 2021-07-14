@@ -99,24 +99,11 @@
                 </form>
             </div>
         </div>
-        <div class="row" id="houses">
-            <div class="col-md-3 col-sm-2 my-3">
-                <div class="house bg-light shadow">
-                    <img src="//placehold.it/150x150" class="w-100" alt="house">
-                    <div class="p-3">
-                        <div class="text-center">
-                            <p><b>BEDS - BATHROOMS - SQUARE FEET</b></p>
-                        </div>
-                        <p>DESCRIPTION</p>
-                        <p><em>PRICE</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="row" id="houses"></div>
         <div class="row">
             <div class="col mt-5">
                 <!-- This is the job forms-->
-                <form class="d-flex" onsubmit="app.housesController.createHouse(event)">
+                <form class="d-flex" onsubmit="app.jobsController.createJob(event)">
                     <div class="form-group">
                         <label for="company">Company</label>
                         <input type="text" name="company" id="company" class="form-control" placeholder="Company..."
@@ -130,12 +117,12 @@
                     <div class="form-group">
                         <label for="startPay">Starting Pay</label>
                         <input type="number" name="startPay" id="startPay" class="form-control"
-                            placeholder="Starting Pay..." required min="100">
+                            placeholder="Starting Pay..." required min="7">
                     </div>
                     <div class="form-group">
                         <label for="requirments">Requirments</label>
-                        <input type="number" name="requirments" id="requirments" class="form-control"
-                            placeholder="Requirments..." required min="1">
+                        <input type="text" name="requirments" id="requirments" class="form-control"
+                            placeholder="Requirments..." required maxlength="250">
                     </div>
                     <div class="form-group">
                         <label for="imgUrl">Image Url</label>
@@ -152,6 +139,7 @@
                 </form>
             </div>
         </div>
+        <div class="row" id="jobs"></div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
