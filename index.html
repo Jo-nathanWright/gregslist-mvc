@@ -113,6 +113,45 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col mt-5">
+                <!-- This is the job forms-->
+                <form class="d-flex" onsubmit="app.housesController.createHouse(event)">
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="company" class="form-control" placeholder="Company..."
+                            required maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="text" name="position" id="position" class="form-control" placeholder="Position..."
+                            required maxlength="25">
+                    </div>
+                    <div class="form-group">
+                        <label for="startPay">Starting Pay</label>
+                        <input type="number" name="startPay" id="startPay" class="form-control"
+                            placeholder="Starting Pay..." required min="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="requirments">Requirments</label>
+                        <input type="number" name="requirments" id="requirments" class="form-control"
+                            placeholder="Requirments..." required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">Image Url</label>
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
