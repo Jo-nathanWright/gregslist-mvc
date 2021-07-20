@@ -65,9 +65,9 @@
                 <!-- This is the house forms-->
                 <form class="d-flex" onsubmit="app.housesController.createHouse(event)">
                     <div class="form-group">
-                        <label for="beds">Beds</label>
-                        <input type="number" name="beds" id="beds" class="form-control" placeholder="Beds..." required
-                            min="1">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="number" name="bedrooms" id="bedrooms" class="form-control"
+                            placeholder="Bedrooms..." required min="1">
                     </div>
                     <div class="form-group">
                         <label for="bathrooms">Bathrooms</label>
@@ -75,14 +75,19 @@
                             placeholder="Bathrooms..." required min="1">
                     </div>
                     <div class="form-group">
-                        <label for="squareFeet">Square Feet</label>
-                        <input type="number" name="squareFeet" id="squareFeet" class="form-control"
-                            placeholder="Square Feet..." required min="100">
+                        <label for="levels">Levels</label>
+                        <input type="number" name="levels" id="levels" class="form-control" placeholder="Levels..."
+                            required min="1">
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
                             required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" name="year" id="year" class="form-control" placeholder="Year..." required
+                            min="1800">
                     </div>
                     <div class="form-group">
                         <label for="imgUrl">Image Url</label>

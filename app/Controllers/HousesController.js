@@ -9,25 +9,46 @@ function _draw() {
     document.getElementById('houses').innerHTML = template
 }
 
-export default class HouseController {
-
+export default class HousesController {
     constructor() {
         ProxyState.on('houses', _draw)
         _draw()
     }
 
-    createHouse(event) {
-        event.preventDefault()
-        let form = event.target
-        let rawHouse = {
-            beds: form.beds.value,
-            bathrooms: form.bathrooms.value,
-            squareFeet: form.squareFeet.value,
-            price: form.price.value,
-            imgUrl: form.imgUrl.value,
-            description: form.description.value
+    async createHouse() {
+        try {
+            event.preventDefault()
+            let form = event.target
+            let rawHouse = {
+                // @ts-ignore
+                bedrooms: form.bedrooms.value,
+                // @ts-ignore
+                bathrooms: form.bathrooms.value,
+                // @ts-ignore
+                levels: form.levels.value,
+                // @ts-ignore
+                price: form.price.value,
+                // @ts-ignore
+                year: form.year.value,
+                // @ts-ignore
+                imgUrl: form.imgUrl.value,
+                // @ts-ignore
+                description: form.description.value
+            }
+            await housesService.createHouse(rawHouse)
+            // @ts-ignore
+            form.reset()
+        } catch (error) {
+            window.alert("We ran into an error creating this house " + error)
         }
-        housesService.createHouse(rawHouse)
-        form.reset()
+
+    }
+
+    deleteHouse(houseId) {
+        housesService.deleteHouse(houseId)
+    }
+
+    bidHouse(houseId) {
+        housesService.bidHouse(houseId)
     }
 }
