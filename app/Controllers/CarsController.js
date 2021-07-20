@@ -19,25 +19,38 @@ export default class CarsController {
     _draw()
   }
 
-  createCar() {
-    event.preventDefault()
-    let form = event.target
-    let rawCar = {
+  async createCar() {
+    try {
+      event.preventDefault()
+      let form = event.target
+      let rawCar = {
+        // @ts-ignore
+        make: form.make.value,
+        // @ts-ignore
+        model: form.model.value,
+        // @ts-ignore
+        year: form.year.value,
+        // @ts-ignore
+        price: form.price.value,
+        // @ts-ignore
+        description: form.description.value,
+        // @ts-ignore
+        imgUrl: form.imgUrl.value
+      }
+      await carsService.createCar(rawCar)
       // @ts-ignore
-      make: form.make.value,
-      // @ts-ignore
-      model: form.model.value,
-      // @ts-ignore
-      year: form.year.value,
-      // @ts-ignore
-      price: form.price.value,
-      // @ts-ignore
-      description: form.description.value,
-      // @ts-ignore
-      imgUrl: form.imgUrl.value
+      form.reset()
+    } catch (error) {
+      window.alert("We ran into an error " + error)
     }
-    carsService.createCar(rawCar)
-    // @ts-ignore
-    form.reset()
+
+  }
+
+  deleteCar(carId) {
+    carsService.deleteCar(carId)
+  }
+
+  bidCar(carId) {
+    carsService.bidCar(carId)
   }
 }
