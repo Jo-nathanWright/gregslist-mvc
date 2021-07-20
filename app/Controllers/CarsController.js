@@ -41,7 +41,7 @@ export default class CarsController {
       // @ts-ignore
       form.reset()
     } catch (error) {
-      window.alert("We ran into an error " + error)
+      window.alert("We ran into an error creating this car : " + error)
     }
 
   }

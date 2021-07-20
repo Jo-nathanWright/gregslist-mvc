@@ -30,8 +30,12 @@ export default class JobsContoller {
             jobsService.createJob(rawJob)
             form.reset()
         } catch (error) {
-            window.alert("We ran into an error creating this house " + error)
+            window.alert("We ran into an error creating this Job : " + error)
         }
 
+    }
+
+    deleteJob(jobId) {
+        jobsService.deleteJob(jobId)
     }
 }

@@ -19,7 +19,7 @@ class CarsService {
       const res = await api.get('cars')
       ProxyState.cars = res.data.map(c => new Car(c))
     } catch (error) {
-      window.alert("We ran into an error " + error)
+      window.alert("We ran into an error getting this car : " + error)
     }
   }
 
@@ -31,7 +31,7 @@ class CarsService {
       console.log('We found It!', res.data)
       ProxyState.cars = ProxyState.cars
     } catch (error) {
-      window.alert("We ran into an error " + error)
+      window.alert("We ran into an error bidding this car : " + error)
     }
   }
 
@@ -41,7 +41,7 @@ class CarsService {
       console.log(res.data)
       ProxyState.cars = ProxyState.cars.filter(c => c.id != carId)
     } catch (error) {
-      window.alert("We ran into an error " + error)
+      window.alert("We ran into an error deleting this car : " + error)
     }
   }
 }

@@ -39,7 +39,7 @@ export default class HousesController {
             // @ts-ignore
             form.reset()
         } catch (error) {
-            window.alert("We ran into an error creating this house " + error)
+            window.alert("We ran into an error creating this house : " + error)
         }
 
     }

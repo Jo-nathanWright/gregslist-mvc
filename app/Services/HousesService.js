@@ -17,7 +17,7 @@ class HousesService {
             const res = await api.get('houses')
             ProxyState.houses = res.data.map(h => new House(h))
         } catch (error) {
-            window.alert("We ran into an error getting this house" + error)
+            window.alert("We ran into an error getting this house : " + error)
         }
     }
 
@@ -29,17 +29,17 @@ class HousesService {
             console.log(res.data)
             ProxyState.houses = ProxyState.houses
         } catch (error) {
-            window.alert("We ran into an error Bidding this house" + error)
+            window.alert("We ran into an error Bidding this house : " + error)
         }
     }
 
     async deleteHouse(houseId) {
         try {
-            const res = api.delete('houses/' + houseId)
+            const res = await api.delete('houses/' + houseId)
             console.log(res.data)
             ProxyState.houses = ProxyState.houses.filter(h => h.id != houseId)
         } catch (error) {
-            window.alert("We ran into an error deleting This House" + error)
+            window.alert("We ran into an error deleting This House : " + error)
         }
     }
 }
