@@ -16,18 +16,22 @@ export default class JobsContoller {
         _draw()
     }
 
-    createJob(event) {
-        event.preventDefault()
-        let form = event.target
-        let rawJob = {
-            company: form.company.value,
-            position: form.position.value,
-            startPay: form.startPay.value,
-            requirments: form.requirments.value,
-            description: form.description.value,
-            imgUrl: form.imgUrl.value,
+    async createJob(event) {
+        try {
+            event.preventDefault()
+            let form = event.target
+            let rawJob = {
+                company: form.company.value,
+                jobTitle: form.jobTitle.value,
+                hours: form.hours.value,
+                rate: form.rate.value,
+                description: form.description.value
+            }
+            jobsService.createJob(rawJob)
+            form.reset()
+        } catch (error) {
+            window.alert("We ran into an error creating this house " + error)
         }
-        jobsService.createJob(rawJob)
-        form.reset()
+
     }
 }
